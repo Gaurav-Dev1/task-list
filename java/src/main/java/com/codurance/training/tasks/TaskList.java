@@ -11,7 +11,7 @@ import java.util.Map;
 public final class TaskList implements Runnable {
     private static final String QUIT = "quit";
 
-    public  Map<String, List<Task>> tasks ;
+    private final Map<String, List<Task>> tasks ;
     private final BufferedReader in;
     public final PrintWriter out;
     private final TaskExecutor taskExecutor;
@@ -26,7 +26,7 @@ public final class TaskList implements Runnable {
         this.in = reader;
         this.out = writer;
         this.tasks = new LinkedHashMap<>();
-        this.taskExecutor = new TaskExecutor(this.in, this.out, this.tasks);
+        this.taskExecutor = new TaskExecutor(this.out, this.tasks);
     }
 
     public void run() {

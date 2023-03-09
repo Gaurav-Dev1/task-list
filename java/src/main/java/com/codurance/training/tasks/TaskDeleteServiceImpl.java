@@ -6,8 +6,6 @@ import java.util.List;
 import java.util.Map;
 
 public class TaskDeleteServiceImpl implements TaskDeleteService{
-
-    private BufferedReader in;
     private PrintWriter out;
     private Map<String, List<Task>> tasks;
 

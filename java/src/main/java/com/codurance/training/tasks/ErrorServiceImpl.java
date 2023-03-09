@@ -9,7 +9,7 @@ public class ErrorServiceImpl implements ErrorService{
 
     private final PrintWriter out;
 
-    public ErrorServiceImpl(PrintWriter out,  Map<String, List<Task>> tasks) {
+    public ErrorServiceImpl(PrintWriter out) {
         this.out = out;
     }
 

@@ -7,7 +7,6 @@ import java.util.Map;
 
 public class TaskExecutor implements TaskExecutorService{
 
-
     private TaskList taskList;
     private TaskListInfoService taskInfoService;
     private TaskListAddService taskListAddService;
@@ -19,18 +18,14 @@ public class TaskExecutor implements TaskExecutorService{
 
     private final TaskDeleteService taskDeleteService;
 
-    private BufferedReader in;
     public PrintWriter out;
 
-
-
-    public TaskExecutor( BufferedReader in, PrintWriter out, Map<String, List<Task>> tasks) {
-
+    public TaskExecutor(PrintWriter out, Map<String, List<Task>> tasks) {
         this.out = out;
         this.taskInfoService = new TaskListInfoServiceImpl(out, tasks);
         this.taskListAddService = new TaskListAddServiceImpl(out, tasks);
-        this.checkAndUncheckService = new CheckAndUncheckServiceImpl(in, out,tasks);
-        this.errorService = new ErrorServiceImpl(out,tasks);
+        this.checkAndUncheckService = new CheckAndUncheckServiceImpl(out,tasks);
+        this.errorService = new ErrorServiceImpl(out);
         this.helperService = new HelperServiceImpl(out);
         this.deadlineService = new DeadlineServiceImpl(out,tasks);
         this.taskDeleteService = new TaskDeleteServiceImpl(out, tasks);

@@ -9,11 +9,8 @@ import java.io.PrintWriter;
 
 public class TaskListAddServiceImpl implements TaskListAddService{
 
-    private TaskList taskList;
-
     private long lastId = 0;
 
-    private BufferedReader in;
     private final PrintWriter out;
     private final Map<String, List<Task>> tasks;
 
