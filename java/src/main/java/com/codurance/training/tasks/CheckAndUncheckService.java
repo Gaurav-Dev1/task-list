@@ -1,9 +1,8 @@
 package com.codurance.training.tasks;
 
-public abstract class CheckAndUncheckService {
+public interface CheckAndUncheckService {
 
-    abstract void check(String idString);
-    abstract void uncheck(String idString);
-
+    void check(String idString);
+    void uncheck(String idString);
 
 }

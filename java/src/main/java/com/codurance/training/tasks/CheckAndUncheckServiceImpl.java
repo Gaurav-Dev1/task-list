@@ -1,11 +1,10 @@
 package com.codurance.training.tasks;
 
-import java.io.BufferedReader;
 import java.io.PrintWriter;
 import java.util.List;
 import java.util.Map;
 
-public class CheckAndUncheckServiceImpl extends CheckAndUncheckService{
+public class CheckAndUncheckServiceImpl implements CheckAndUncheckService{
     private final PrintWriter out;
     private final Map<String, List<Task>> tasks;
 
